@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    background-color: #fdf6f7;
+    background-image: radial-gradient(at 0% 0%, rgba(253, 230, 238, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(245, 235, 255, 0.4) 0px, transparent 50%);
+    color: #33272d;
+    -webkit-tap-highlight-color: transparent;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  button,
+  [role='button'],
+  select,
+  summary {
+    cursor: pointer;
+  }
+}
+
+/* Tabular numbers for dates and counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle pastel scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #f0c3d4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e2a5bc;
+}
+
+/* Rich Document Editor & Content Styling */
+.note-editor-content {
+  min-height: 240px;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #372b31;
+}
+
+.note-editor-content:empty:before {
+  content: attr(data-placeholder);
+  color: #c4aab4;
+  pointer-events: none;
+  display: block;
+}
+
+.note-editor-content h1 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #2b1f25;
+}
+
+.note-editor-content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: #3b2832;
+}
+
+.note-editor-content h3 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+  color: #4a3440;
+}
+
+.note-editor-content p {
+  margin-bottom: 0.5rem;
+}
+
+.note-editor-content ul {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.note-editor-content ol {
+  list-style-type: decimal;
+  margin-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.note-editor-content li {
+  margin-bottom: 0.25rem;
+}
+
+.note-editor-content blockquote {
+  border-left: 3px solid #f472b6;
+  padding-left: 0.75rem;
+  font-style: italic;
+  color: #6b4e5c;
+  margin: 0.75rem 0;
+}
+
+.note-editor-content hr {
+  border: none;
+  border-top: 1px solid #fbcfe8;
+  margin: 1.25rem 0;
+}
+
+.note-editor-content mark {
+  background-color: #fed7aa;
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+}
+
+/* Interactive Checklist Task Row in Note */
+.task-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0.35rem 0;
+  padding: 0.2rem 0;
+}
+
+.task-checkbox-row input[type='checkbox'] {
+  margin-top: 0.35rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: #ec4899;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.task-checkbox-row .task-text {
+  flex: 1;
+  transition:
+    color 0.15s ease,
+    text-decoration 0.15s ease;
+}
+
+.task-checkbox-row.is-completed .task-text,
+.task-checkbox-row[data-checked='true'] .task-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Mobile safe area padding utility */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}

@@ -1,0 +1,5 @@
+allowBuilds:
+  '@google/genai': true
+  '@tailwindcss/oxide': true
+  protobufjs: true
+  unrs-resolver: true

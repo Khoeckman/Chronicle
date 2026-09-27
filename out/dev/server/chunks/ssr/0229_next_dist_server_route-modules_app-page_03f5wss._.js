@@ -1,0 +1,66 @@
+module.exports = [
+  '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)',
+  (__turbopack_context__, module, exports) => {
+    'use strict'
+
+    if (('TURBOPACK compile-time falsy', 0));
+    else {
+      //TURBOPACK unreachable
+      if (('TURBOPACK compile-time falsy', 0));
+      else {
+        //TURBOPACK unreachable
+        if (('TURBOPACK compile-time truthy', 1)) {
+          if (('TURBOPACK compile-time truthy', 1)) {
+            module.exports = __turbopack_context__.r(
+              '[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)',
+            )
+          } //TURBOPACK unreachable
+          else;
+        } //TURBOPACK unreachable
+        else;
+      }
+    }
+  },
+  '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-dom.js [app-rsc] (ecmascript)',
+  (__turbopack_context__, module, exports) => {
+    'use strict'
+
+    module.exports = __turbopack_context__.r(
+      '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)',
+    ).vendored['react-rsc'].ReactDOM
+  },
+  '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-runtime.js [app-rsc] (ecmascript)',
+  (__turbopack_context__, module, exports) => {
+    'use strict'
+
+    module.exports = __turbopack_context__.r(
+      '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)',
+    ).vendored['react-rsc'].ReactJsxRuntime
+  },
+  '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-turbopack-server.js [app-rsc] (ecmascript)',
+  (__turbopack_context__, module, exports) => {
+    'use strict'
+
+    module.exports = __turbopack_context__.r(
+      '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)',
+    ).vendored['react-rsc'].ReactServerDOMTurbopackServer
+  },
+  '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-turbopack-static.js [app-rsc] (ecmascript)',
+  (__turbopack_context__, module, exports) => {
+    'use strict'
+
+    module.exports = __turbopack_context__.r(
+      '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)',
+    ).vendored['react-rsc'].ReactServerDOMTurbopackStatic
+  },
+  '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)',
+  (__turbopack_context__, module, exports) => {
+    'use strict'
+
+    module.exports = __turbopack_context__.r(
+      '[project]/node_modules/.pnpm/next@16.3.6_@babel+core@7.2_988cfeccd51d581a76c77ef03cc65a35/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)',
+    ).vendored['react-rsc'].React
+  },
+]
+
+//# sourceMappingURL=0229_next_dist_server_route-modules_app-page_03f5wss._.js.map

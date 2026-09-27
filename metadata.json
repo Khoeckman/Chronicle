@@ -1,0 +1,6 @@
+{
+  "name": "Chronicle Notes & Calendar",
+  "description": "A responsive mobile-first daily notes and calendar app with offline sync, rich formatting, interactive checklists, and tag organization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
