@@ -176,27 +176,23 @@ export const WeekView: React.FC<WeekViewProps> = ({ selectedDate, onSelectDate, 
 
                   {/* Task dots: white hole (half size) when incomplete; full circle when completed */}
                   <div className="flex items-center justify-center gap-1.5 min-h-[16px] w-full px-1 filter-none">
-                    {dayTasks.length > 0 ? (
-                      <div className="flex items-center justify-center gap-1.5 flex-wrap filter-none">
-                        {dayTasks.slice(0, 4).map((t, idx) => {
-                          const dotBg = dotColorMap[t.color || 'rose'] || 'bg-rose-400'
-                          return (
-                            <div
-                              key={t.id || idx}
-                              className={`w-2.5 h-2.5 rounded-full ${dotBg} shadow-2xs filter-none opacity-100 flex items-center justify-center shrink-0`}
-                              title={t.title || 'Task'}
-                            >
-                              {!t.isCompleted && <span className="w-[5px] h-[5px] rounded-full bg-white block shrink-0" />}
-                            </div>
-                          )
-                        })}
-                        {dayTasks.length > 4 && (
-                          <span className="text-[9px] font-bold text-slate-500 leading-none">+{dayTasks.length - 4}</span>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-[10px] text-transparent select-none">-</span>
-                    )}
+                    <div className="flex items-center justify-center gap-1.5 flex-wrap filter-none">
+                      {dayTasks.slice(0, 4).map((t, idx) => {
+                        const dotBg = dotColorMap[t.color || 'rose'] || 'bg-rose-400'
+                        return (
+                          <div
+                            key={t.id || idx}
+                            className={`w-3 h-3 rounded-full ${dotBg} shadow-2xs filter-none opacity-100 flex items-center justify-center shrink-0`}
+                            title={t.title || 'Task'}
+                          >
+                            {!t.isCompleted && <span className="w-1.5 h-1.5 rounded-full bg-white block shrink-0" />}
+                          </div>
+                        )
+                      })}
+                      {dayTasks.length > 4 && (
+                        <span className="text-[9px] font-bold text-slate-500 leading-none">+{dayTasks.length - 4}</span>
+                      )}
+                    </div>
                   </div>
                 </button>
               )

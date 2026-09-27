@@ -1,6 +1,7 @@
 'use client'
 
-import React, { createContext, useContext, useState, useTransition } from 'react'
+import React, { createContext, useContext, useEffect, useState, useTransition } from 'react'
+
 import { Language, TranslationKey, getTranslation } from '@/lib/i18n'
 
 interface LanguageContextType {
@@ -17,31 +18,43 @@ const LanguageContext = createContext<LanguageContextType>({
 
 const STORAGE_KEY = 'chronicle_language'
 
-function getInitialLanguage(): Language {
-  if (typeof window === 'undefined') return 'en'
+function getStoredLanguage(): Language {
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
+
     if (saved === 'en' || saved === 'nl') {
       return saved
     }
+
     const navLang = navigator.language?.toLowerCase() || ''
+
     if (navLang.startsWith('nl')) {
       return 'nl'
     }
   } catch {
     // Ignore
   }
-  return 'en'
+
+  return 'nl'
 }
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage)
+  const [language, setLanguageState] = useState<Language>('nl')
   const [, startTransition] = useTransition()
+
+  useEffect(() => {
+    const initialLanguage = getStoredLanguage()
+
+    if (initialLanguage !== 'nl') {
+      setLanguageState(initialLanguage)
+    }
+  }, [])
 
   const setLanguage = (lang: Language) => {
     startTransition(() => {
       setLanguageState(lang)
     })
+
     try {
       localStorage.setItem(STORAGE_KEY, lang)
     } catch {

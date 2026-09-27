@@ -18,12 +18,7 @@ function ChronicleApp() {
   const { language, t } = useLanguage()
   const dateLocale = language === 'nl' ? 'nl-NL' : 'en-US'
 
-  const [tasks, setTasks] = useState<Task[]>(() => {
-    if (typeof window !== 'undefined') {
-      return loadTasks()
-    }
-    return []
-  })
+  const [tasks, setTasks] = useState<Task[]>([])
   const [selectedDate, setSelectedDate] = useState<string>(getTodayIso)
   const [calendarViewMode, setCalendarViewMode] = useState<CalendarViewMode>('week')
   const [searchQuery, setSearchQuery] = useState('')
@@ -34,17 +29,17 @@ function ChronicleApp() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSyncModalOpen, setIsSyncModalOpen] = useState(false)
 
-  // Subscribe to external updates from other tabs
+  // Load tasks from localStorage after hydration and subscribe to external updates
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const unsubscribe = subscribeToSyncUpdates(() => {
-        const fresh = loadTasks()
-        setTasks(fresh)
-      })
+    setTasks(loadTasks())
 
-      return () => {
-        unsubscribe()
-      }
+    const unsubscribe = subscribeToSyncUpdates(() => {
+      const fresh = loadTasks()
+      setTasks(fresh)
+    })
+
+    return () => {
+      unsubscribe()
     }
   }, [])
 

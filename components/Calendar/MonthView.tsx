@@ -194,10 +194,10 @@ export const MonthView: React.FC<MonthViewProps> = ({ selectedDate, onSelectDate
                           return (
                             <div
                               key={t.id || idx}
-                              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full ${dotBg} shadow-2xs filter-none opacity-100 flex items-center justify-center shrink-0`}
+                              className={`w-3 h-3 rounded-full ${dotBg} shadow-2xs filter-none opacity-100 flex items-center justify-center shrink-0`}
                               title={t.title || 'Task'}
                             >
-                              {!t.isCompleted && <span className="w-1 h-1 sm:w-[5px] sm:h-[5px] rounded-full bg-white block shrink-0" />}
+                              {!t.isCompleted && <span className="w-1.5 h-1.5 rounded-full bg-white block shrink-0" />}
                             </div>
                           )
                         })}
